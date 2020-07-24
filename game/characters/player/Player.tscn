@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://characters/player/player.png" type="Texture" id=1]
-[ext_resource path="res://levels/Player.gd" type="Script" id=2]
+[ext_resource path="res://characters/player/Player.gd" type="Script" id=2]
+[ext_resource path="res://characters/player/PlayerStateMachine.gd" type="Script" id=3]
+[ext_resource path="res://characters/player/states/Idle.gd" type="Script" id=4]
+[ext_resource path="res://characters/player/states/movement/Moving.gd" type="Script" id=5]
+[ext_resource path="res://characters/player/states/movement/Jump.gd" type="Script" id=6]
 
-[sub_resource type="CapsuleShape2D" id=2]
+[sub_resource type="CapsuleShape2D" id=1]
 radius = 8.04118
 height = 15.9216
 
@@ -14,10 +18,22 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
-JUMP_POWER = 150
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[node name="PlayerStateMachine" type="Node" parent="."]
+script = ExtResource( 3 )
+initial_state = NodePath("Moving")
+
+[node name="Idle" type="Node" parent="PlayerStateMachine"]
+script = ExtResource( 4 )
+
+[node name="Moving" type="Node" parent="PlayerStateMachine"]
+script = ExtResource( 5 )
+
+[node name="Jump" type="Node" parent="PlayerStateMachine"]
+script = ExtResource( 6 )
