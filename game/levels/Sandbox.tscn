@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="Sandbox" type="Node2D"]
+
+[node name="Player" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+
+[node name="Sprite" type="Sprite" parent="Player"]
