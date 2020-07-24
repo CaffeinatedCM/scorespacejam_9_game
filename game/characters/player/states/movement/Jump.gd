@@ -1,23 +1,27 @@
 extends PlayerBaseState
 
-export var JUMP_POWER = 100
-export var GRAVITY = 98
+export var JUMP_POWER = 10
+export var GRAVITY = 9.8
 
 var has_jumped = false
-var velocity = Vector2.ZERO
+var velocity = Vector3.ZERO
+var initial_velocity = Vector3.ZERO;
+
+func initialize(vel):
+    initial_velocity = vel
 
 func enter():
     has_jumped = false
-    velocity = Vector2.ZERO
+    velocity = initial_velocity
+    velocity.y = JUMP_POWER
 
 func update(delta):
     if has_jumped and player.is_on_floor():
-        emit_signal("finished", "moving")
+        emit_signal("finished", "previous")
     if not has_jumped:
-        velocity.y = -JUMP_POWER
+        velocity.y = JUMP_POWER
         has_jumped = true
     else:
-        velocity.y = velocity.linear_interpolate(Vector2(0, GRAVITY), delta).y 
+        velocity.y = velocity.linear_interpolate(Vector3(0, -GRAVITY, 0), delta).y 
     
-    print("Velocity", velocity)
-    velocity = player.move_and_slide(velocity, Vector2.UP)
+    velocity = player.move_and_slide(velocity, Vector3.UP)
