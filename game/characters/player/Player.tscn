@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://characters/player/player.png" type="Texture" id=1]
+[ext_resource path="res://levels/Player.gd" type="Script" id=2]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.04118
+height = 15.9216
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 131.67, 72.2064 )
+collision_layer = 2
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+JUMP_POWER = 150
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
