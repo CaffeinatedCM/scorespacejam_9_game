@@ -14,7 +14,7 @@ var current_direction
 func _ready():
 	start_position = global_transform.origin
 	end_position = global_transform.origin + direction * distance
-	playerDetector.connect("body_exited", self, "_on_player_leave_viewport" )
+	playerDetector.connect("body_entered", self, "_on_player_leave_viewport" )
 
 func _on_player_leave_viewport():
 	print('uh oh player gone')
