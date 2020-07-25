@@ -21,6 +21,6 @@ func _physics_process(delta):
         start_position = global_transform.origin
         end_position = global_transform.origin + direction * distance
 
-    var target_velocity = Vector3(direction.x * speed, direction.y, 0)
+    var target_velocity = Vector3(direction.x * speed, direction.y * speed, 0)
     velocity = velocity.linear_interpolate(target_velocity, accel * delta)
     global_transform.origin = global_transform.origin + velocity * delta
