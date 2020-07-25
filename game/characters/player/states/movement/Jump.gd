@@ -1,4 +1,4 @@
-extends PlayerBaseState
+extends MovementBaseState
 
 export var JUMP_POWER = 15
 export var GRAVITY = 12

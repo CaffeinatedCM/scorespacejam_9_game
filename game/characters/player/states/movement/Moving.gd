@@ -1,4 +1,4 @@
-extends PlayerBaseState
+extends MovementBaseState
 
 export var MAX_SPEED = 10
 export var GRAVITY = 9.8
