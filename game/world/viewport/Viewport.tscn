@@ -1,9 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://world/viewport/Viewport.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 3.08573, 0.470349, 3.39584 )
+
+[sub_resource type="CubeMesh" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_transparent = true
+albedo_color = Color( 0.976471, 0.145098, 0.0352941, 0.560784 )
 
 [node name="ViewPort" type="Area"]
 collision_layer = 0
@@ -14,5 +20,10 @@ script = ExtResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0231857, 0.812177, 16.8181 )
 
 [node name="PlayerDetection" type="CollisionShape" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.66964, 0 )
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.73737, 0 )
 shape = SubResource( 1 )
+
+[node name="CSGMesh" type="CSGMesh" parent="."]
+transform = Transform( 30, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, -9.62922, 0 )
+mesh = SubResource( 2 )
+material = SubResource( 3 )
