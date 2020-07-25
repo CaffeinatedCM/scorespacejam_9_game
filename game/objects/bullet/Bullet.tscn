@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://objects/bullet/Bullet.gd" type="Script" id=1]
 
@@ -10,6 +10,9 @@ height = 0.5
 radius = 0.05
 mid_height = 0.5
 radial_segments = 10
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.945098, 1, 0.0196078, 1 )
 
 [node name="Bullet" type="KinematicBody"]
 input_ray_pickable = false
@@ -24,3 +27,4 @@ shape = SubResource( 1 )
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, 0 )
 mesh = SubResource( 2 )
+material = SubResource( 3 )

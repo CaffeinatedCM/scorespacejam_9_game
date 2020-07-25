@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="GunPivot" type="Spatial"]
+
+[node name="Gun" type="CSGCylinder" parent="."]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 1.62571, 0, 0 )
+radius = 0.05
+height = 0.5
