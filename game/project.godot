@@ -10,6 +10,11 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "State",
+"class": "BasicEnemyBaseState",
+"language": "GDScript",
+"path": "res://characters/BasicEnemy/States/BasicEnemyBaseState.gd"
+}, {
+"base": "State",
 "class": "PlayerBaseState",
 "language": "GDScript",
 "path": "res://characters/player/states/PlayerBaseState.gd"
@@ -25,6 +30,7 @@ _global_script_classes=[ {
 "path": "res://scripts/state_machine/State_Machine.gd"
 } ]
 _global_script_class_icons={
+"BasicEnemyBaseState": "",
 "PlayerBaseState": "",
 "State": "",
 "StateMachine": ""
