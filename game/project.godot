@@ -51,7 +51,7 @@ _global_script_class_icons={
 [application]
 
 config/name="game"
-run/main_scene="res://levels/Sandbox.tscn"
+run/main_scene="res://menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -120,7 +120,6 @@ shoot={
 3d_physics/layer_2="player"
 3d_physics/layer_3="pass_through"
 3d_physics/layer_4="enemy"
-3d_physics/layer_5="viewport"
 
 [rendering]
 
