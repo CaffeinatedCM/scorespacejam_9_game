@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
+[ext_resource path="res://characters/player/interact_states/Gun.gd" type="Script" id=1]
+[ext_resource path="res://characters/player/PlayerInteractStateMachine.gd" type="Script" id=2]
 [ext_resource path="res://characters/player/PlayerStateMachine.gd" type="Script" id=3]
 [ext_resource path="res://characters/player/states/Idle.gd" type="Script" id=4]
 [ext_resource path="res://characters/player/states/movement/Moving.gd" type="Script" id=5]
 [ext_resource path="res://characters/player/states/movement/Jump.gd" type="Script" id=6]
+[ext_resource path="res://characters/Stats.tscn" type="PackedScene" id=7]
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends KinematicBody
@@ -38,6 +41,9 @@ __meta__ = {
 "_edit_group_": true
 }
 
+[node name="Stats" parent="." instance=ExtResource( 7 )]
+MAX_HEALTH = 10
+
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 3 )
 initial_state = NodePath("Moving")
@@ -51,6 +57,12 @@ script = ExtResource( 5 )
 [node name="Jump" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 6 )
 
+[node name="PlayerInteractStateMachine" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Gun" type="Node" parent="PlayerInteractStateMachine"]
+script = ExtResource( 1 )
+
 [node name="CSGMesh" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 mesh = SubResource( 1 )
@@ -58,3 +70,15 @@ mesh = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
 shape = SubResource( 2 )
+
+[node name="GunPivot" type="Spatial" parent="."]
+
+[node name="Gun" type="CSGCylinder" parent="GunPivot"]
+transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 1.62571, 0, 0 )
+radius = 0.05
+height = 0.5
+
+[node name="RayCast" type="RayCast" parent="GunPivot"]
+enabled = true
+cast_to = Vector3( 10, 0, 0 )
+collision_mask = 8

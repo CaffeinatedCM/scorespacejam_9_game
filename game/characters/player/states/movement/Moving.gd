@@ -4,7 +4,7 @@ export var MAX_SPEED = 15
 export var GRAVITY = 9.8
 
 var velocity = Vector3.ZERO
-var direction = Vector3.ZERO
+var direction = Vector3.ZERO 
 
 func enter():
     velocity = Vector3.ZERO
