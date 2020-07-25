@@ -3,16 +3,16 @@
 [ext_resource path="res://world/viewport/Viewport.gd" type="Script" id=1]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.715769, 0.0410003, 2.1117 )
+extents = Vector3( 3.08573, 0.470349, 3.39584 )
 
-[node name="KinematicBody" type="KinematicBody"]
+[node name="ViewPort" type="Area"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.812177, 16.8759 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0231857, 0.812177, 16.8181 )
 
 [node name="PlayerDetection" type="CollisionShape" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.66964, 0 )
 shape = SubResource( 1 )

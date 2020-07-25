@@ -63,7 +63,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286643, 25.3956, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03876, 1.51059, -0.0188758 )
 
 [node name="ViewPort" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84312, 0 )
 direction = Vector3( 0, 1, 0 )
 [connection signal="body_entered" from="Death" to="Death" method="_on_Death_body_entered"]
-
-[editable path="ViewPort"]
