@@ -55,7 +55,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 11.6195, 0 )
 transform = Transform( 3.12, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373578, 23.4121, 0 )
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9397, 23.8776, 0.730398 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.7116, 23.552, 0.730398 )
 direction = Vector3( 0, -1, 0 )
 distance = 7
 
