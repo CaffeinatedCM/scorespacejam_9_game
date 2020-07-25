@@ -1,6 +1,7 @@
 extends PlayerBaseState
 
 onready var stats = player.get_node("Stats")
+onready var pewPlayer = get_node("PewPlayer")
 
 var bullet = preload("res://objects/bullet/Bullet.tscn")
 
@@ -26,3 +27,4 @@ func shoot():
     b.global_transform.origin = player.get_node("GunPivot/Gun").global_transform.origin
     var aim_degrees = rad2deg(Vector2.RIGHT.angle_to(aim_direction))
     b.rotation_degrees.z = aim_degrees
+    pewPlayer.play()

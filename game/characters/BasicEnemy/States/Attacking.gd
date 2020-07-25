@@ -4,6 +4,8 @@ var bullet = preload("res://objects/bullet/Bullet.tscn")
 
 export var shoot_speed = 1
 
+onready var pewPlayer = $PewPlayer
+
 var target
 var shot_delay = false
 
@@ -36,6 +38,7 @@ func shoot(direction):
     b.global_transform.origin = gunPivot.get_node("Gun").global_transform.origin
     var aim_degrees = rad2deg(Vector3.RIGHT.angle_to(direction))
     b.rotation_degrees.z = aim_degrees
+    pewPlayer.play()
 
 func _on_player_left(_player):
     target = null

@@ -16,7 +16,7 @@ func _ready():
 	connect("body_entered", self, "_on_player_leave_viewport" )
 
 func _on_player_leave_viewport(player):
-	player.take_damage(10000)
+	player.die()
 
 func _physics_process(delta):
 	var target_velocity = Vector3(direction.x * speed, direction.y * speed, 0)
