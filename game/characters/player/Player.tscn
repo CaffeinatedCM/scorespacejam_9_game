@@ -7,25 +7,7 @@
 [ext_resource path="res://characters/player/states/movement/Moving.gd" type="Script" id=5]
 [ext_resource path="res://characters/player/states/movement/Jump.gd" type="Script" id=6]
 [ext_resource path="res://characters/Stats.tscn" type="PackedScene" id=7]
-
-[sub_resource type="GDScript" id=1]
-script/source = "extends KinematicBody
-
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = \"text\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-    pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#    pass
-"
+[ext_resource path="res://characters/player/Player.gd" type="Script" id=8]
 
 [sub_resource type="CapsuleMesh" id=2]
 radius = 0.5
@@ -36,13 +18,12 @@ radius = 0.5
 [node name="Player" type="KinematicBody"]
 collision_layer = 2
 collision_mask = 5
-script = SubResource( 1 )
+script = ExtResource( 8 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="Stats" parent="." instance=ExtResource( 7 )]
-MAX_HEALTH = 10
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 3 )
@@ -77,8 +58,3 @@ shape = SubResource( 3 )
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 1.62571, 0, 0 )
 radius = 0.05
 height = 0.5
-
-[node name="RayCast" type="RayCast" parent="GunPivot"]
-enabled = true
-cast_to = Vector3( 10, 0, 0 )
-collision_mask = 8

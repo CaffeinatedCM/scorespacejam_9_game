@@ -1,7 +1,7 @@
 extends PlayerBaseState
 
 export var MAX_SPEED = 10
-export var GRAVITY = 24.8
+export var GRAVITY = 9.8
 export var ACCELERATION = 4.5
 export var DEACCELERATION = 16
 
