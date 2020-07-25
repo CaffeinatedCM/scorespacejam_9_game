@@ -41,23 +41,26 @@ transform = Transform( 3.12, 0, 0, 0, 1, 0, 0, 0, 1, -8.676, 9.636, 0 )
 
 [node name="MovingPlatform" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7647, 6.25157, 0.730398 )
+distance = 5
 
 [node name="MovingPlatform2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9397, 6.25157, 0.730398 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0062, 3.99632, -0.00346333 )
 direction = Vector3( 0, 1, 0 )
+distance = 7
 
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 11.6195, 0 )
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 3.12, 0, 0, 0, 1, 0, 0, 0, 1, -8.676, 17.7324, 0 )
+transform = Transform( 3.12, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373578, 23.4121, 0 )
 
 [node name="MovingPlatform4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9397, 14.3479, 0.730398 )
-direction = Vector3( 0, 1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9397, 23.8776, 0.730398 )
+direction = Vector3( 0, -1, 0 )
+distance = 7
 
 [node name="Enemy2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 19.7159, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286643, 25.3956, 0 )
 
 [node name="Coin" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03876, 1.51059, -0.0188758 )
