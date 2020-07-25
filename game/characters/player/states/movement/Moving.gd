@@ -10,13 +10,13 @@ func update(_delta):
     if Input.is_action_just_pressed("jump") and player.is_on_floor():
         emit_signal("finished", "jump")
 
-    velocity = detect_player_velocity(MAX_SPEED)
-
-    if velocity.x < 0:
+    get_player_direction()
+    if direction.x < 0:
         playerMesh.rotation_degrees.y = -90
-    else:
+    elif direction.x > 0:
         playerMesh.rotation_degrees.y = 90
-
-    if is_zero_approx(velocity.x):
+    else:
         emit_signal("finished", "idle")
+
+    velocity = detect_player_velocity(MAX_SPEED)    
     velocity = player.move_and_slide(velocity, Vector3.UP)
