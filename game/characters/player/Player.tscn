@@ -11,9 +11,7 @@
 [ext_resource path="res://objects/GunPivot/GunPivot.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/heart.png" type="Texture" id=10]
 [ext_resource path="res://assets/coin.png" type="Texture" id=11]
-
-[sub_resource type="CapsuleMesh" id=1]
-radius = 0.5
+[ext_resource path="res://characters/player/playerchar.tscn" type="PackedScene" id=12]
 
 [sub_resource type="CapsuleShape" id=2]
 radius = 0.5
@@ -31,7 +29,7 @@ MAX_HEALTH = 5
 
 [node name="PlayerStateMachine" type="Node" parent="."]
 script = ExtResource( 3 )
-initial_state = NodePath("Moving")
+initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 4 )
@@ -48,9 +46,8 @@ script = ExtResource( 2 )
 [node name="Gun" type="Node" parent="PlayerInteractStateMachine"]
 script = ExtResource( 1 )
 
-[node name="CSGMesh" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-mesh = SubResource( 1 )
+[node name="playerchar" parent="." instance=ExtResource( 12 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.785012, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
