@@ -1,6 +1,6 @@
 extends PlayerBaseState
 
-export var MAX_SPEED = 20
+export var MAX_SPEED = 15
 export var GRAVITY = 9.8
 
 var velocity = Vector3.ZERO
