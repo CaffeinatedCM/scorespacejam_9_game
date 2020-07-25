@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://characters/player/interact_states/Gun.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/PlayerInteractStateMachine.gd" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=8]
 [ext_resource path="res://objects/GunPivot/GunPivot.tscn" type="PackedScene" id=9]
 [ext_resource path="res://assets/heart.png" type="Texture" id=10]
+[ext_resource path="res://assets/coin.png" type="Texture" id=11]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -37,7 +38,6 @@ script = ExtResource( 4 )
 
 [node name="Moving" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 5 )
-GRAVITY = 12.0
 
 [node name="Jump" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 6 )
@@ -67,17 +67,37 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Coins" type="Label" parent="CanvasLayer/HUD"]
+[node name="CoinValue" type="Label" parent="CanvasLayer/HUD"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -77.0
-margin_bottom = 14.0
-text = "Coins:"
+margin_left = -80.304
+margin_top = 27.0
+margin_right = -3.30396
+margin_bottom = 41.0
+text = "1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Health" type="TextureRect" parent="CanvasLayer/HUD"]
-margin_left = 20.9361
-margin_top = 26.727
-margin_right = 405.936
-margin_bottom = 61.727
+margin_left = 21.0
+margin_top = 27.0
+margin_right = 406.0
+margin_bottom = 41.0
+size_flags_vertical = 8
 texture = ExtResource( 10 )
+expand = true
 stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CoinIcon" type="TextureRect" parent="CanvasLayer/HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -115.396
+margin_top = 17.0
+margin_right = -83.396
+margin_bottom = 49.0
+texture = ExtResource( 11 )
+expand = true

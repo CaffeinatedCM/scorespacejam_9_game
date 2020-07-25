@@ -16,10 +16,10 @@ func take_damage(damage):
 
 func collect_coin(value):
     coins += value
-    HUD.get_node("Coins").text = "Coins %s" % [str(coins)]
+    HUD.get_node("CoinValue").text = "%s" % [str(coins)]
 
 func die():
     get_tree().reload_current_scene()
 
 func update_health_display(value):
-    HUD.get_node("Health").rect_size.x = value * 32
+    HUD.get_node("Health").rect_size.x = value * 16
