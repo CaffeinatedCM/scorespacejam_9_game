@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://objects/Coin/Coin.gd" type="Script" id=1]
 
@@ -13,6 +13,22 @@ height = 0.2
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.85098, 1, 0, 1 )
 
+[sub_resource type="Animation" id=4]
+resource_name = "Bounce"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("CSGMesh:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.265796, 0 ), Vector3( 0, 0.566956, 0 ) ]
+}
+
 [node name="Coin" type="Area"]
 collision_layer = 0
 collision_mask = 2
@@ -23,7 +39,11 @@ transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0
 shape = SubResource( 1 )
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, -0.182829, 0 )
 mesh = SubResource( 2 )
 material = SubResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Bounce"
+anims/Bounce = SubResource( 4 )
 [connection signal="body_entered" from="." to="." method="_on_player_entered"]

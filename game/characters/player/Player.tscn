@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://characters/player/interact_states/Gun.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/PlayerInteractStateMachine.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://assets/oof.ogg" type="AudioStream" id=13]
 [ext_resource path="res://assets/pew.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/bigoof.ogg" type="AudioStream" id=15]
+[ext_resource path="res://assets/ba-ding.ogg" type="AudioStream" id=16]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.442881
@@ -111,3 +112,6 @@ stream = ExtResource( 13 )
 
 [node name="BigOofPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
+
+[node name="BaDingPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )

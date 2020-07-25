@@ -4,7 +4,7 @@ onready var stats = $Stats
 onready var HUD = $CanvasLayer/HUD
 onready var oofPlayer = $OofPlayer
 onready var bigOofPlayer = $BigOofPlayer
-
+onready var baDingPlayer = $BaDingPlayer
 
 var coins = 0
 
@@ -12,7 +12,7 @@ func _ready():
     stats.connect("on_no_health", self, "die")
     stats.connect("health_changed", self, "update_health_display")
     update_health_display(stats.health)
-    collect_coin(0)
+    HUD.get_node("CoinValue").text = "%s" % [str(coins)]
     $playerchar/AnimationTree.active = true
 
 func take_damage(damage):
@@ -21,6 +21,7 @@ func take_damage(damage):
 
 func collect_coin(value):
     coins += value
+    baDingPlayer.play()
     HUD.get_node("CoinValue").text = "%s" % [str(coins)]
 
 func die():
