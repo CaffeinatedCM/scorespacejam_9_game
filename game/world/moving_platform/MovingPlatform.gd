@@ -3,6 +3,8 @@ extends KinematicBody
 export var direction = Vector3.RIGHT
 export var distance = 10
 export var speed = 5
+export var accel = .6
+var velocity = Vector3.ZERO
 
 var start_position
 var end_position
@@ -13,12 +15,12 @@ func _ready():
     end_position = global_transform.origin + direction * distance
 
 func _physics_process(delta):
-
-    if is_zero_approx(global_transform.origin.distance_to(end_position)):
-        direction.x = - direction.x
-        direction.y = - direction.y
+    if global_transform.origin.distance_squared_to(end_position) < 0.1:
+        direction.x *= -1
+        direction.y *= -1
         start_position = global_transform.origin
         end_position = global_transform.origin + direction * distance
 
-    var velocity = direction * speed
+    var target_velocity = Vector3(direction.x * speed, direction.y, 0)
+    velocity = velocity.linear_interpolate(target_velocity, accel * delta)
     global_transform.origin = global_transform.origin + velocity * delta
