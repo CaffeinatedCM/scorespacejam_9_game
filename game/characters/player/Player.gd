@@ -22,4 +22,4 @@ func die():
     get_tree().reload_current_scene()
 
 func update_health_display(value):
-    HUD.get_node("Health").text = "Health %s/%s" % [str(value), str(stats.MAX_HEALTH)]
+    HUD.get_node("Health").rect_size.x = value * 32

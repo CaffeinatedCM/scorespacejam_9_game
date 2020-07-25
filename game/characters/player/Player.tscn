@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://characters/player/interact_states/Gun.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/PlayerInteractStateMachine.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://characters/Stats.tscn" type="PackedScene" id=7]
 [ext_resource path="res://characters/player/Player.gd" type="Script" id=8]
 [ext_resource path="res://objects/GunPivot/GunPivot.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/heart.png" type="Texture" id=10]
 
 [sub_resource type="CapsuleMesh" id=1]
 radius = 0.5
@@ -66,17 +67,17 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Health" type="Label" parent="CanvasLayer/HUD"]
-margin_right = 40.0
-margin_bottom = 14.0
-text = "Health: 10/10"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Coins" type="Label" parent="CanvasLayer/HUD"]
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -77.0
 margin_bottom = 14.0
 text = "Coins:"
+
+[node name="Health" type="TextureRect" parent="CanvasLayer/HUD"]
+margin_left = 20.9361
+margin_top = 26.727
+margin_right = 405.936
+margin_bottom = 61.727
+texture = ExtResource( 10 )
+stretch_mode = 2
