@@ -1,7 +1,10 @@
 extends PlayerBaseState
 
-export var MAX_SPEED = 15
-export var GRAVITY = 9.8
+export var MAX_SPEED = 10
+export var GRAVITY = 24.8
+export var ACCELERATION = 4.5
+export var DEACCELERATION = 16
+
 
 var velocity = Vector3.ZERO
 var direction = Vector3.ZERO 
@@ -18,6 +21,12 @@ func update(delta):
     if Input.is_action_just_pressed("jump") and player.is_on_floor():
         emit_signal("finished", "jump")
 
-    velocity = velocity.linear_interpolate(target_velocity, delta)
+    var accel
+    if direction.dot(target_velocity):
+        accel = ACCELERATION
+    else:
+        accel = DEACCELERATION
+
+    velocity = velocity.linear_interpolate(target_velocity, accel * delta)
 
     velocity = player.move_and_slide(velocity, Vector3.UP)
