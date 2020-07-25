@@ -10,6 +10,7 @@ func _ready():
     stats.connect("health_changed", self, "update_health_display")
     update_health_display(stats.health)
     collect_coin(0)
+    $playerchar/AnimationTree.active = true
 
 func take_damage(damage):
     stats.health -= damage
