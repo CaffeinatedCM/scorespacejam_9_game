@@ -26,6 +26,7 @@ func update_total_kills_text():
 
 func take_damage(damage):
     stats.health -= damage
+    Input.start_joy_vibration(0, 1, 0.5, 0.5)
     oofPlayer.play()
 
 func collect_coin(value):
@@ -35,7 +36,9 @@ func collect_coin(value):
 
 func die():
     bigOofPlayer.play()
+    Input.start_joy_vibration(0, 1,1, 0)
     yield(bigOofPlayer, "finished")
+    Input.stop_joy_vibration(0)
     get_tree().change_scene("res://menus/GameOver.tscn")
 
 func update_health_display(value):
