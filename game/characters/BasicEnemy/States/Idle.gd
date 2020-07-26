@@ -6,7 +6,6 @@ export var wanderChance = 0.6
 onready var idleTimer = enemy.get_node("IdleTimer")
 
 func enter():
-    print("Idle")
     playerDetector.connect("body_entered", self, "_on_player_detected" )
     reset_timer()
 

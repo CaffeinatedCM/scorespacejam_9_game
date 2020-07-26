@@ -17,7 +17,6 @@ func enter():
     playerDetector.connect("body_entered", self, "_on_player_detected" )
     wander_target = original_position + Vector3(rand_range(-MAX_WANDER, MAX_WANDER), original_position.y, original_position.z)
     velocity = Vector3.ZERO
-    print("Wander target", wander_target)
 
 func exit():
     playerDetector.disconnect("body_entered", self, "_on_player_detected")
