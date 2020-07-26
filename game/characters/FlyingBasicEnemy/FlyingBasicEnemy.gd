@@ -1,6 +1,5 @@
 extends KinematicBody
 
-onready var HUD = $CanvasLayer/HUD
 
 onready var stats = $Stats
 

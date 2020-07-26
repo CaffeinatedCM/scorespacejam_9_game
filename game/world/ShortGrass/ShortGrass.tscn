@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://world/ShortGrass/GrassSpriteLessColorTest.png" type="Texture" id=1]
+
+[sub_resource type="CubeMesh" id=1]
+size = Vector3( 1, 1, 0 )
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+params_billboard_mode = 1
+params_billboard_keep_scale = true
+albedo_texture = ExtResource( 1 )
+uv1_offset = Vector3( 0.5, 0.5, 0 )
+uv1_triplanar = true
+
+[node name="ShortGrass" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )

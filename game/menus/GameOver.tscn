@@ -9,8 +9,6 @@
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=7]
 [ext_resource path="res://characters/FlyingBasicEnemy/FlyingBasicEnemy.tscn" type="PackedScene" id=8]
 
-
-
 [node name="GameOver" type="Spatial"]
 script = ExtResource( 7 )
 
@@ -81,8 +79,6 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/MainMenuControl"]
-modulate = Color( 1, 0, 0, 1 )
-self_modulate = Color( 1, 0, 0, 1 )
 margin_left = 776.681
 margin_top = 30.3881
 margin_right = 2334.68

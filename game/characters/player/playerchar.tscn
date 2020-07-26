@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://characters/player/Material.material" type="Material" id=1]
 
@@ -100,7 +100,21 @@ bind/25/bone = -1
 bind/25/pose = Transform( -7.54979e-08, 1, 0, 0, 0, 1, 1, 7.54979e-08, 0, -0.756448, -0.7725, 0.116461 )
 
 [sub_resource type="Animation" id=3]
-resource_name = "Idle"
+resource_name = "Falling"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Armature:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 90, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
 length = 1.25
 loop = true
 tracks/0/type = "transform"
@@ -286,8 +300,7 @@ tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.25, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="Animation" id=4]
-resource_name = "Walking"
+[sub_resource type="Animation" id=5]
 length = 1.25
 loop = true
 tracks/0/type = "transform"
@@ -473,25 +486,39 @@ tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.25, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="AnimationNodeAnimation" id=5]
-animation = "Idle"
+[sub_resource type="AnimationNodeAnimation" id=12]
+animation = "Falling"
 
 [sub_resource type="AnimationNodeAnimation" id=6]
-animation = "Walking"
+animation = "Idle"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=7]
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "Walking"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=8]
 
-[sub_resource type="AnimationNodeStateMachine" id=9]
-states/Idle/node = SubResource( 5 )
-states/Idle/position = Vector2( 283, 131 )
-states/Walking/node = SubResource( 6 )
-states/Walking/position = Vector2( 507, 131 )
-transitions = [ "Idle", "Walking", SubResource( 7 ), "Walking", "Idle", SubResource( 8 ) ]
-start_node = "Idle"
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=10]
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=16]
+
+[sub_resource type="AnimationNodeStateMachine" id=10]
+states/Falling/node = SubResource( 12 )
+states/Falling/position = Vector2( 283, 238 )
+states/Idle/node = SubResource( 6 )
+states/Idle/position = Vector2( 283, 131 )
+states/Walking/node = SubResource( 7 )
+states/Walking/position = Vector2( 507, 131 )
+transitions = [ "Idle", "Walking", SubResource( 8 ), "Walking", "Idle", SubResource( 9 ), "Idle", "Falling", SubResource( 13 ), "Falling", "Idle", SubResource( 14 ), "Walking", "Falling", SubResource( 15 ), "Falling", "Walking", SubResource( 16 ) ]
+start_node = "Idle"
+graph_offset = Vector2( -75, 80 )
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
 
 [node name="playerchar" type="Spatial"]
 
@@ -636,10 +663,11 @@ skin = SubResource( 2 )
 material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle = SubResource( 3 )
-anims/Walking = SubResource( 4 )
+anims/Falling = SubResource( 3 )
+anims/Idle = SubResource( 4 )
+anims/Walking = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 9 )
+tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 10 )
+parameters/playback = SubResource( 11 )
