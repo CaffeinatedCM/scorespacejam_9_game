@@ -28,5 +28,10 @@ func update(delta):
         velocity.y = velocity.linear_interpolate(Vector3(0, -GRAVITY, 0), delta).y 
         if velocity.y < 0:
             player.set_collision_mask_bit(2, true)
-    
+
+    if Input.is_action_just_released("jump"):
+        print('wtf')
+        velocity.y = velocity.linear_interpolate(Vector3(0, -GRAVITY, 0), delta).y 
+        if velocity.y < 0:
+            player.set_collision_mask_bit(2, true)
     velocity = player.move_and_slide(velocity, Vector3.UP)

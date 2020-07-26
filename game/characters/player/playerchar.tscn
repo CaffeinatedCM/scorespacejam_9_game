@@ -473,22 +473,22 @@ tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.25, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=5]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=8]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Walking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=5]
+[sub_resource type="AnimationNodeStateMachineTransition" id=7]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=6]
+[sub_resource type="AnimationNodeStateMachineTransition" id=8]
 
 [sub_resource type="AnimationNodeStateMachine" id=9]
-states/Idle/node = SubResource( 7 )
+states/Idle/node = SubResource( 5 )
 states/Idle/position = Vector2( 283, 131 )
-states/Walking/node = SubResource( 8 )
+states/Walking/node = SubResource( 6 )
 states/Walking/position = Vector2( 507, 131 )
-transitions = [ "Idle", "Walking", SubResource( 5 ), "Walking", "Idle", SubResource( 6 ) ]
+transitions = [ "Idle", "Walking", SubResource( 7 ), "Walking", "Idle", SubResource( 8 ) ]
 start_node = "Idle"
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=10]
