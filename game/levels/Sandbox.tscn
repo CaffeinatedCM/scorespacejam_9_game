@@ -61,7 +61,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.84312, 0 )
 direction = Vector3( 0, 1, 0 )
 
 [node name="FlyingBasicEnemy" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.97423, 2.15646, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.35952, 2.15646, 0 )
 
-[node name="FlyingBasicEnemy2" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.32484, 16.1772, 0 )
+[editable path="Player"]
