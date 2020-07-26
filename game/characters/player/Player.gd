@@ -16,6 +16,7 @@ func _ready():
     $playerchar/AnimationTree.active = true
 
 func take_damage(damage):
+    print("I got hurt")
     stats.health -= damage
     oofPlayer.play()
 

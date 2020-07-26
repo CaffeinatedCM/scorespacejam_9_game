@@ -37,6 +37,7 @@ script = ExtResource( 5 )
 
 [node name="PewPlayer" type="AudioStreamPlayer" parent="StateMachine/Attacking"]
 stream = ExtResource( 8 )
+bus = "Fun Bus"
 
 [node name="Wandering" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
