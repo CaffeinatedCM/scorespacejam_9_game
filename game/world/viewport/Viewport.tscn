@@ -12,11 +12,11 @@ extents = Vector3( 3.08573, 0.470349, 3.39584 )
 albedo_texture = ExtResource( 2 )
 uv1_scale = Vector3( 5, 5, 1 )
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="SphereMesh" id=4]
-material = SubResource( 5 )
+[sub_resource type="SphereMesh" id=5]
+material = SubResource( 4 )
 radius = 0.1
 height = 0.2
 radial_segments = 32
@@ -32,7 +32,7 @@ speed = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0231857, 0.812177, 16.8181 )
 
 [node name="PlayerDetection" type="CollisionShape" parent="."]
-transform = Transform( 5, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.73737, 0 )
+transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.73737, 0 )
 shape = SubResource( 1 )
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
@@ -43,7 +43,7 @@ material = SubResource( 3 )
 [node name="Particles" type="CPUParticles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -14.5765, 0 )
 amount = 30
-mesh = SubResource( 4 )
+mesh = SubResource( 5 )
 emission_shape = 1
 emission_sphere_radius = 1.0
 direction = Vector3( 0, 100, 0 )
