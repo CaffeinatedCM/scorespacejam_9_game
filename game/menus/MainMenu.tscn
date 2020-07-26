@@ -60,6 +60,15 @@ margin_right = 104.0
 margin_bottom = 10.0
 text = "Sandbox"
 
+[node name="Label2" type="Label" parent="CanvasLayer/MainMenuControl"]
+margin_left = 76.3675
+margin_top = 206.475
+margin_right = 382.367
+margin_bottom = 477.475
+text = "CONTROLLER IS RECOMMENDED"
+align = 1
+valign = 1
+
 [node name="Sandbox" type="Spatial" parent="."]
 
 [node name="Ground" parent="Sandbox" instance=ExtResource( 3 )]

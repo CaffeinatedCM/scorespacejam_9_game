@@ -10,7 +10,7 @@ extents = Vector3( 3.08573, 0.470349, 3.39584 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
-uv1_triplanar_sharpness = 4.43828
+uv1_scale = Vector3( 5, 5, 1 )
 
 [node name="ViewPort" type="Area"]
 collision_layer = 0
