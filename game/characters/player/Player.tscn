@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://characters/player/interact_states/Gun.gd" type="Script" id=1]
 [ext_resource path="res://characters/player/PlayerInteractStateMachine.gd" type="Script" id=2]
@@ -16,6 +16,7 @@
 [ext_resource path="res://assets/pew.ogg" type="AudioStream" id=14]
 [ext_resource path="res://assets/bigoof.ogg" type="AudioStream" id=15]
 [ext_resource path="res://assets/ba-ding.ogg" type="AudioStream" id=16]
+[ext_resource path="res://assets/ugh.ogg" type="AudioStream" id=17]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.442881
@@ -143,3 +144,6 @@ bus = "Fun Bus"
 [node name="BaDingPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 16 )
 bus = "Fun Bus"
+
+[node name="UghPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )

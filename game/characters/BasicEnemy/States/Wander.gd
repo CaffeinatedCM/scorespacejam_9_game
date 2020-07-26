@@ -14,6 +14,7 @@ func _ready():
     original_position = enemy.global_transform.origin
 
 func enter():
+    animationState.travel("Walking")
     playerDetector.connect("body_entered", self, "_on_player_detected" )
     wander_target = original_position + Vector3(rand_range(-MAX_WANDER, MAX_WANDER), original_position.y, original_position.z)
     velocity = Vector3.ZERO
@@ -26,6 +27,13 @@ func update(delta):
         emit_signal("finished", "idle")
 
     var direction = Vector3.LEFT if wander_target.x < enemy.global_transform.origin.x else Vector3.RIGHT
+
+    if direction.x < 0:
+        enemyMesh.rotation_degrees.y = -90
+    elif direction.x > 0:
+        enemyMesh.rotation_degrees.y = 90
+    else:
+        emit_signal("finished", "idle")
 
     var target_velocity = Vector3(direction.x * MAX_SPEED, -GRAVITY, 0)
 

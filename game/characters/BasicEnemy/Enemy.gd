@@ -5,7 +5,8 @@ onready var HUD = $CanvasLayer/HUD
 onready var stats = $Stats
 
 func _ready():
-	$Stats.connect("on_no_health", self, "i_died")
+    $Stats.connect("on_no_health", self, "i_died")
+    $enemychar/AnimationTree.active = true
 
 func i_died():
 	GameState.increase_total_kills()
