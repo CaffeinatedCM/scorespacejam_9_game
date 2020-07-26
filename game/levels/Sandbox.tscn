@@ -5,10 +5,12 @@
 [ext_resource path="res://characters/Fairy/Fairy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://world/Platform4/Platform4.tscn" type="PackedScene" id=4]
 [ext_resource path="res://world/moving_platform/MovingPlatform.tscn" type="PackedScene" id=5]
-[ext_resource path="res://characters/BasicEnemy/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/Ogre/Ogre.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://world/viewport/Viewport.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=9]
+
+
 
 [node name="Sandbox" type="Spatial"]
 

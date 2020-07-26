@@ -1,14 +1,14 @@
 [gd_scene load_steps=25 format=2]
 
-[ext_resource path="res://characters/Stats.tscn" type="PackedScene" id=1]
-[ext_resource path="res://characters/BasicEnemy/Enemy.gd" type="Script" id=2]
-[ext_resource path="res://characters/BasicEnemy/BasicEnemyStateMachine.gd" type="Script" id=3]
-[ext_resource path="res://characters/BasicEnemy/States/Idle.gd" type="Script" id=4]
-[ext_resource path="res://characters/BasicEnemy/States/Attacking.gd" type="Script" id=5]
-[ext_resource path="res://objects/GunPivot/GunPivot.tscn" type="PackedScene" id=6]
-[ext_resource path="res://characters/BasicEnemy/States/Wander.gd" type="Script" id=7]
-[ext_resource path="res://assets/pew.ogg" type="AudioStream" id=8]
-[ext_resource path="res://characters/player/Material.material" type="Material" id=9]
+[ext_resource path="res://characters/player/Material.material" type="Material" id=1]
+[ext_resource path="res://assets/pew.ogg" type="AudioStream" id=2]
+[ext_resource path="res://characters/Ogre/OgreStateMachine.gd" type="Script" id=3]
+[ext_resource path="res://characters/Ogre/States/Wander.gd" type="Script" id=4]
+[ext_resource path="res://characters/Ogre/States/Attacking.gd" type="Script" id=5]
+[ext_resource path="res://characters/Ogre/States/Idle.gd" type="Script" id=6]
+[ext_resource path="res://characters/Ogre/Ogre.gd" type="Script" id=7]
+[ext_resource path="res://objects/GunPivot/GunPivot.tscn" type="PackedScene" id=8]
+[ext_resource path="res://characters/Stats.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "Cube"
@@ -19,7 +19,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97751,
 "index_count": 1296,
-"material": ExtResource( 9 ),
+"material": ExtResource( 1 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -0.17773, 0.715389, -0.0978214, 0.355469, 0.137947, 0.195643 ), AABB( -0.199389, 0.846329, -0.109122, 0.398789, 0.493607, 0.220127 ), AABB( -0.0532451, 1.33993, -0.0532451, 0.10649, 0.0640424, 0.10649 ), AABB( -0.110773, 1.40396, -0.121959, 0.221545, 0.337551, 0.284458 ), AABB( 0.199389, 1.16366, -0.0978214, 0.331315, 0.179506, 0.195653 ), AABB( 0.530704, 1.1894, -0.0699564, 0.29743, 0.128025, 0.139913 ), AABB( 0.828134, 1.22417, -0.0807822, 0.0528953, 0.0584949, 0.16598 ), AABB( 0.930555, 1.23151, -0.0807822, 0.0639614, 0.0438236, 0.137182 ), AABB( 0.994516, 1.2335, -0.0691063, 0.0639714, 0.0398256, 0.126537 ), AABB( 0.867783, 1.22417, 0.0851976, 0.101572, 0.0585049, 0.059797 ), AABB( -0.530704, 1.16366, -0.0978214, 0.331325, 0.179506, 0.195643 ), AABB( -0.828134, 1.1894, -0.0699564, 0.29744, 0.128025, 0.139913 ), AABB( -0.881029, 1.22417, -0.0807822, 0.0529053, 0.0584949, 0.16598 ), AABB( -0.994516, 1.23151, -0.0807822, 0.0639714, 0.0438236, 0.137182 ), AABB( -1.05848, 1.2335, -0.0691063, 0.0639714, 0.0398356, 0.126537 ), AABB( -0.969355, 1.22417, 0.0851976, 0.101582, 0.0585049, 0.059797 ), AABB( 0.0275794, 0.380316, -0.0978214, 0.15016, 0.47302, 0.195643 ), AABB( 0.0417868, 0.059004, -0.0724222, 0.134101, 0.32198, 0.144854 ), AABB( 0.0674072, 0.000470459, -0.045326, 0.0846449, 0.0587936, 0.230131 ), AABB( -0.17773, 0.380316, -0.0978214, 0.15015, 0.47302, 0.195653 ), AABB( -0.175878, 0.059004, -0.0724222, 0.134091, 0.32198, 0.144844 ), AABB( -0.152052, 0.000470459, -0.045326, 0.0846449, 0.0587936, 0.230131 ) ],
 "vertex_count": 790
@@ -531,28 +531,31 @@ start_node = "Idle"
 [sub_resource type="BoxShape" id=15]
 extents = Vector3( 6, 2, 1 )
 
-[node name="Enemy" type="KinematicBody"]
+[node name="Ogre" type="KinematicBody"]
 collision_layer = 8
 collision_mask = 5
-script = ExtResource( 2 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Stats" parent="." instance=ExtResource( 1 )]
+[node name="Stats" parent="." instance=ExtResource( 9 )]
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 3 )
 
 [node name="Idle" type="Node" parent="StateMachine"]
-script = ExtResource( 4 )
+script = ExtResource( 6 )
 
 [node name="Attacking" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
 
 [node name="PewPlayer" type="AudioStreamPlayer" parent="StateMachine/Attacking"]
-stream = ExtResource( 8 )
+stream = ExtResource( 2 )
 bus = "Fun Bus"
 
 [node name="Wandering" type="Node" parent="StateMachine"]
-script = ExtResource( 7 )
+script = ExtResource( 4 )
 MAX_WANDER = 5
 
 [node name="IdleTimer" type="Timer" parent="."]
@@ -724,7 +727,7 @@ collision_mask = 2
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
 shape = SubResource( 15 )
 
-[node name="GunPivot" parent="." instance=ExtResource( 6 )]
+[node name="GunPivot" parent="." instance=ExtResource( 8 )]
 
 [node name="Gun" parent="GunPivot" index="0"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 2.62571, 0, 0 )

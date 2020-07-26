@@ -4,10 +4,10 @@ extends KinematicBody
 onready var stats = $Stats
 
 func _ready():
-    stats.connect("on_no_health", self, "i_died")
+    stats.connect("on_no_health", self, "die")
     $CybatMesh/AnimationTree.active = true
 
-func i_died():
+func die():
     GameState.increase_total_kills()
     queue_free()
     

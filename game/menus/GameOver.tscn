@@ -4,10 +4,12 @@
 [ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=2]
 [ext_resource path="res://world/ground/Ground.tscn" type="PackedScene" id=3]
 [ext_resource path="res://world/Platform4/Platform4.tscn" type="PackedScene" id=4]
-[ext_resource path="res://characters/BasicEnemy/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://characters/Ogre/Ogre.tscn" type="PackedScene" id=5]
 [ext_resource path="res://menus/GameOver.png" type="Texture" id=6]
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=7]
 [ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=8]
+
+
 
 [node name="GameOver" type="Spatial"]
 script = ExtResource( 7 )
