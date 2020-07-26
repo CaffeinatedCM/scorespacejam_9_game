@@ -19,6 +19,7 @@ func exit():
 func update(_delta):
     if not shooting:
         shooting = true
+        $ShazamPlayer.play()
         for i in range(shots):
             shoot(enemy.global_transform.origin.direction_to(target.global_transform.origin))
             yield(get_tree().create_timer(shot_delay), "timeout")

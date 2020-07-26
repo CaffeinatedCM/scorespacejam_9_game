@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/viewport/Viewport.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://characters/Ogre/Ogre.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://world/Platform1/Platform1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/portal/Portal.tscn" type="PackedScene" id=9]
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
@@ -518,6 +519,9 @@ collision_layer = 1
 [node name="Platform13" parent="Spatial" instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3652, 30.6223, 0 )
 collision_layer = 1
+
+[node name="Area" parent="Spatial" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21982, 31.9506, -0.0724596 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.0134022, -0.999896, 0.00531412, -0.515467, -0.00235492, 0.856906, -0.856804, -0.0142237, -0.515445, 0.531793, 12.4438, -7.25821 )
