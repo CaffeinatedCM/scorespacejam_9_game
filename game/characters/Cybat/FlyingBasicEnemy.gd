@@ -5,6 +5,7 @@ onready var stats = $Stats
 
 func _ready():
     stats.connect("on_no_health", self, "i_died")
+    $CybatMesh/AnimationTree.active = true
 
 func i_died():
     GameState.increase_total_kills()

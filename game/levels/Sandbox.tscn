@@ -8,7 +8,7 @@
 [ext_resource path="res://characters/BasicEnemy/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://world/viewport/Viewport.tscn" type="PackedScene" id=8]
-[ext_resource path="res://characters/FlyingBasicEnemy/FlyingBasicEnemy.tscn" type="PackedScene" id=9]
+[ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=9]
 
 [node name="Sandbox" type="Spatial"]
 
@@ -41,17 +41,6 @@ distance = 7
 [node name="Enemy" parent="." instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 11.2303, 0 )
 
-[node name="Platform3" parent="." instance=ExtResource( 4 )]
-transform = Transform( 3.12, 0, 0, 0, 1, 0, 0, 0, 1, 0.0373578, 23.4121, 0 )
-
-[node name="MovingPlatform4" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.712, 23.552, 0 )
-direction = Vector3( 0, -1, 0 )
-distance = 7
-
-[node name="Enemy2" parent="." instance=ExtResource( 6 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.286643, 25.0199, 0 )
-
 [node name="Coin" parent="." instance=ExtResource( 7 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03876, 1.51059, -0.0188758 )
 
@@ -70,35 +59,23 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.07858, 0 )
 direction = Vector3( 0, 1, 0 )
 speed = 0
 
-[node name="FlyingBasicEnemy" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.77251, 2.15646, 0 )
-
-[node name="FlyingBasicEnemy4" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37251, 2.65646, -0.1 )
-
-[node name="FlyingBasicEnemy5" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.87251, 3.35646, -0.1 )
-
 [node name="FlyingBasicEnemy6" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87251, 4.45646, -0.1 )
-
-[node name="FlyingBasicEnemy7" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4725, 2.95646, -0.1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.87251, 3.65646, -0.1 )
 
 [node name="FlyingBasicEnemy8" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4725, 1.25646, -0.1 )
 
 [node name="FlyingBasicEnemy9" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8725, 4.55646, -0.1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8725, 4.55646, -0.1 )
 
 [node name="FlyingBasicEnemy2" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15501, 12.1221, 0 )
 
-[node name="FlyingBasicEnemy3" parent="." instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0871, 16.0474, 0 )
-
 [node name="Fairy" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 1.9, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3, 1.9, 0 )
+
+[node name="Fairy2" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7, 18.8, 0 )
 
 [editable path="Player"]
 

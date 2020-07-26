@@ -5,6 +5,7 @@ export var RECHARGE_TIME = 2
 onready var timer = $RechargeTimer
 
 func enter():
+    animationState.travel("charge-up")
     timer.start(RECHARGE_TIME)
     playerDetector.connect("body_exited", self, "_on_player_left")
 

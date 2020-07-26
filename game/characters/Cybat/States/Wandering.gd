@@ -13,6 +13,7 @@ func _ready():
     original_position = enemy.global_transform.origin
 
 func enter():
+    animationState.travel("Normal")
     playerDetector.connect("body_entered", self, "_on_player_detected" )
     wander_target = original_position + Vector3(rand_range(-MAX_WANDER, MAX_WANDER), rand_range(-MAX_WANDER, MAX_WANDER), original_position.z)
     velocity = Vector3.ZERO
@@ -27,6 +28,11 @@ func update(delta):
     var direction = Vector3.ZERO
     direction.x =  -1 if wander_target.x < enemy.global_transform.origin.x else 1
     direction.y =  -1 if wander_target.y < enemy.global_transform.origin.y else 1
+
+    if direction.x < 0:
+        mesh.rotation_degrees.y = -90
+    elif direction.x > 0:
+        mesh.rotation_degrees.y = 90
 
     var target_velocity = Vector3(direction.x * MAX_SPEED, direction.y * MAX_SPEED, 0)
 

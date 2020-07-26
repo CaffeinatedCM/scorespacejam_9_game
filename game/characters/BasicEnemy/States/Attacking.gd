@@ -28,7 +28,7 @@ func update(_delta):
         shot_delay = false
 
 func update_gun_rotation(target_direction):
-    var aim_degrees = rad2deg(Vector3.RIGHT.angle_to(target_direction))
+    var aim_degrees = rad2deg(Vector2.RIGHT.angle_to(Vector2(target_direction.x, target_direction.y)))
     gunPivot.rotation_degrees.z = aim_degrees
 
 func shoot(direction):
@@ -36,7 +36,7 @@ func shoot(direction):
     b.initialize(stats.DAMAGE, Vector3(direction.x, direction.y, 0).normalized())
     get_tree().root.add_child(b)
     b.global_transform.origin = gunPivot.get_node("Gun").global_transform.origin
-    var aim_degrees = rad2deg(Vector3.RIGHT.angle_to(direction))
+    var aim_degrees = rad2deg(Vector2.RIGHT.angle_to(Vector2(direction.x, direction.y)))
     b.rotation_degrees.z = aim_degrees
     pewPlayer.play()
 

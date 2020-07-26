@@ -15,9 +15,14 @@ _global_script_classes=[ {
 "path": "res://characters/BasicEnemy/States/BasicEnemyBaseState.gd"
 }, {
 "base": "State",
+"class": "FairyBaseState",
+"language": "GDScript",
+"path": "res://characters/Fairy/states/FairyBaseState.gd"
+}, {
+"base": "State",
 "class": "FlyingBasicEnemyBaseState",
 "language": "GDScript",
-"path": "res://characters/FlyingBasicEnemy/States/FlyingBasicEnemyBaseState.gd"
+"path": "res://characters/Cybat/States/FlyingBasicEnemyBaseState.gd"
 }, {
 "base": "PlayerBaseState",
 "class": "MovementBaseState",
@@ -41,6 +46,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "BasicEnemyBaseState": "",
+"FairyBaseState": "",
 "FlyingBasicEnemyBaseState": "",
 "MovementBaseState": "",
 "PlayerBaseState": "",
