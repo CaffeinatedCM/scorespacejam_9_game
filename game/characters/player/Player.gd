@@ -15,6 +15,8 @@ func _ready():
     HUD.get_node("CoinValue").text = "%s" % [str(GameState.coins)]
     HUD.get_node("TotalKills").text = "%s" % [str(GameState.totalKills)]
     $playerchar/AnimationTree.active = true
+    move_lock_z = true
+    
 
 func update_total_kills_text():
     ughPlayer.play()

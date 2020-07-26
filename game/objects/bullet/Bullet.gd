@@ -20,3 +20,6 @@ func _physics_process(delta):
             collider.take_damage(damage)
         
         queue_free()
+
+func _on_Timer_timeout():
+    queue_free()

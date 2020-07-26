@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://characters/Stats.tscn" type="PackedScene" id=1]
 [ext_resource path="res://characters/FlyingBasicEnemy/StateMachine.gd" type="Script" id=2]
@@ -12,13 +12,16 @@
 radius = 0.5
 height = 1.0
 
-[sub_resource type="SphereShape" id=2]
-radius = 0.5
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="SphereShape" id=3]
+radius = 0.5
+
+[sub_resource type="SphereShape" id=4]
 radius = 0.590663
 
-[sub_resource type="CylinderShape" id=4]
+[sub_resource type="CylinderShape" id=5]
 radius = 5.00392
 
 [node name="FlyingBasicEnemy" type="KinematicBody"]
@@ -27,6 +30,7 @@ collision_mask = 5
 script = ExtResource( 6 )
 
 [node name="Stats" parent="." instance=ExtResource( 1 )]
+MAX_HEALTH = 1
 
 [node name="StateMachine" type="Node" parent="."]
 script = ExtResource( 2 )
@@ -51,9 +55,10 @@ one_shot = true
 
 [node name="CSGMesh" type="CSGMesh" parent="."]
 mesh = SubResource( 1 )
+material = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-shape = SubResource( 2 )
+shape = SubResource( 3 )
 
 [node name="Hurtbox" type="Area" parent="."]
 monitorable = false
@@ -61,7 +66,7 @@ collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="Hurtbox"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="PlayerDetector" type="Area" parent="."]
 collision_layer = 0
@@ -69,7 +74,7 @@ collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="PlayerDetector"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 4 )
+shape = SubResource( 5 )
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
