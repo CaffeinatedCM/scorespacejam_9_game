@@ -54,6 +54,10 @@ config/name="game"
 run/main_scene="res://menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GameState="*res://game/GameState.gd"
+
 [display]
 
 window/size/width=1200

@@ -1,11 +1,17 @@
 extends KinematicBody
 
+onready var HUD = $CanvasLayer/HUD
+
 onready var stats = $Stats
 
 func _ready():
-    $Stats.connect("on_no_health", self, "queue_free")
+	$Stats.connect("on_no_health", self, "i_died")
+
+func i_died():
+	GameState.increase_total_kills()
+	queue_free()
 
 func take_damage(value):
-    $Stats.health -= value
+	$Stats.health -= value
 
 

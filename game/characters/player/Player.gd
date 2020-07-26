@@ -11,9 +11,14 @@ var coins = 0
 func _ready():
     stats.connect("on_no_health", self, "die")
     stats.connect("health_changed", self, "update_health_display")
+    GameState.connect("total_kills_updated", self, "update_total_kills_text")
     update_health_display(stats.health)
     HUD.get_node("CoinValue").text = "%s" % [str(coins)]
+    HUD.get_node("TotalKills").text = "%s" % [str(GameState.totalKills)]
     $playerchar/AnimationTree.active = true
+
+func update_total_kills_text():
+    HUD.get_node("TotalKills").text = "%s" % [str(GameState.totalKills)]
 
 func take_damage(damage):
     stats.health -= damage

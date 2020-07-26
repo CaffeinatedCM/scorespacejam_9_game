@@ -84,6 +84,30 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="TotalKills" type="Label" parent="CanvasLayer/HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -565.304
+margin_top = 27.0
+margin_right = -488.304
+margin_bottom = 41.0
+text = "1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalKillsLabel" type="Label" parent="CanvasLayer/HUD"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -635.304
+margin_top = 27.0
+margin_right = -558.304
+margin_bottom = 41.0
+text = "Total Kills:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Health" type="TextureRect" parent="CanvasLayer/HUD"]
 margin_left = 21.0
 margin_top = 27.0
