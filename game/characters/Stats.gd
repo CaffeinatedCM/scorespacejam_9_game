@@ -9,7 +9,6 @@ export var DAMAGE = 1
 onready var health = MAX_HEALTH setget set_health
 
 func set_health(value):
-    print(get_parent())
     health = value
     emit_signal("health_changed", value)
     if value <= 0:
