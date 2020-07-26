@@ -7,7 +7,7 @@ func enter():
     velocity = Vector3.ZERO
 
 func update(_delta):
-    if Input.is_action_just_pressed("jump"):
+    if Input.is_action_just_pressed("jump") and player.is_on_floor():
         emit_signal("finished", "jump")
 
     get_player_direction()

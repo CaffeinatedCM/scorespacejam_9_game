@@ -486,39 +486,39 @@ tracks/25/imported = true
 tracks/25/enabled = true
 tracks/25/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1.25, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
 
-[sub_resource type="AnimationNodeAnimation" id=12]
+[sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Falling"
 
-[sub_resource type="AnimationNodeAnimation" id=6]
+[sub_resource type="AnimationNodeAnimation" id=7]
 animation = "Idle"
 
-[sub_resource type="AnimationNodeAnimation" id=7]
+[sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Walking"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=8]
-
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=13]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=14]
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=15]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id=16]
-
-[sub_resource type="AnimationNodeStateMachine" id=10]
-states/Falling/node = SubResource( 12 )
+[sub_resource type="AnimationNodeStateMachine" id=15]
+states/Falling/node = SubResource( 6 )
 states/Falling/position = Vector2( 283, 238 )
-states/Idle/node = SubResource( 6 )
+states/Idle/node = SubResource( 7 )
 states/Idle/position = Vector2( 283, 131 )
-states/Walking/node = SubResource( 7 )
+states/Walking/node = SubResource( 8 )
 states/Walking/position = Vector2( 507, 131 )
-transitions = [ "Idle", "Walking", SubResource( 8 ), "Walking", "Idle", SubResource( 9 ), "Idle", "Falling", SubResource( 13 ), "Falling", "Idle", SubResource( 14 ), "Walking", "Falling", SubResource( 15 ), "Falling", "Walking", SubResource( 16 ) ]
+transitions = [ "Idle", "Walking", SubResource( 9 ), "Walking", "Idle", SubResource( 10 ), "Idle", "Falling", SubResource( 11 ), "Falling", "Idle", SubResource( 12 ), "Walking", "Falling", SubResource( 13 ), "Falling", "Walking", SubResource( 14 ) ]
 start_node = "Idle"
 graph_offset = Vector2( -75, 80 )
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=11]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=16]
 
 [node name="playerchar" type="Spatial"]
 
@@ -668,6 +668,6 @@ anims/Idle = SubResource( 4 )
 anims/Walking = SubResource( 5 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource( 10 )
+tree_root = SubResource( 15 )
 anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 11 )
+parameters/playback = SubResource( 16 )
