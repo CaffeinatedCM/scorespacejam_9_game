@@ -21,6 +21,7 @@ func update_total_kills_text():
     HUD.get_node("TotalKills").text = "%s" % [str(GameState.totalKills)]
 
 func take_damage(damage):
+    print("I got hurt")
     stats.health -= damage
     oofPlayer.play()
 
