@@ -32,7 +32,7 @@ func collect_coin(value):
 func die():
     bigOofPlayer.play()
     yield(bigOofPlayer, "finished")
-    get_tree().reload_current_scene()
+    get_tree().change_scene("res://menus/GameOver.tscn")
 
 func update_health_display(value):
     HUD.get_node("Health").rect_size.x = value * 16
