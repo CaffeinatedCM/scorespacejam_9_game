@@ -9,7 +9,6 @@
 [ext_resource path="res://characters/Cybat/States/Attacking.gd" type="Script" id=7]
 [ext_resource path="res://characters/Cybat/CybatMesh.tscn" type="PackedScene" id=8]
 
-
 [sub_resource type="SphereShape" id=1]
 radius = 0.5
 
@@ -71,3 +70,6 @@ shape = SubResource( 3 )
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
+aabb = AABB( -5.73731, -5.64333, -1, 11.4746, 11.2867, 2 )

@@ -732,4 +732,7 @@ shape = SubResource( 15 )
 [node name="Gun" parent="GunPivot" index="0"]
 transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 2.62571, 0, 0 )
 
+[node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
+aabb = AABB( -5.78806, -3.07569, -1, 11.5761, 6.15138, 2 )
+
 [editable path="GunPivot"]
