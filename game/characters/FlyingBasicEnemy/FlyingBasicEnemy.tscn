@@ -33,6 +33,7 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="StateMachine"]
 script = ExtResource( 5 )
+idleTime = 2
 
 [node name="Wandering" type="Node" parent="StateMachine"]
 script = ExtResource( 4 )

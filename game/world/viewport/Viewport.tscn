@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://world/viewport/Viewport.gd" type="Script" id=1]
-[ext_resource path="res://world/viewport/Lava.png" type="Texture" id=2]
+[ext_resource path="res://world/viewport/Lava2.png" type="Texture" id=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 3.08573, 0.470349, 3.39584 )
@@ -10,8 +10,7 @@ extents = Vector3( 3.08573, 0.470349, 3.39584 )
 
 [sub_resource type="SpatialMaterial" id=3]
 albedo_texture = ExtResource( 2 )
-uv1_triplanar = true
-uv1_triplanar_sharpness = 5.09824
+uv1_triplanar_sharpness = 4.43828
 
 [node name="ViewPort" type="Area"]
 collision_layer = 0
