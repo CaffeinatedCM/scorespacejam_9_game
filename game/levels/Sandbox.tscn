@@ -97,8 +97,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.15501, 12.1221, 0 )
 [node name="FlyingBasicEnemy3" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0871, 16.0474, 0 )
 
-[node name="KinematicBody" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 2.1, 0 )
+[node name="Fairy" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2, 1.9, 0 )
 
 [editable path="Player"]
 

@@ -17,6 +17,8 @@ func _ready():
     $playerchar/AnimationTree.active = true
     move_lock_z = true
     
+func _physics_process(_delta):
+    global_transform.origin.z = 0
 
 func update_total_kills_text():
     ughPlayer.play()
