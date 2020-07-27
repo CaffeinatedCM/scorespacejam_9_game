@@ -6,6 +6,8 @@
 extents = Vector3( 0.503234, 0.14953, 1.12904 )
 
 [node name="Platform1" type="StaticBody"]
+collision_layer = 4
+collision_mask = 0
 
 [node name="platform1x-grass" parent="." instance=ExtResource( 1 )]
 

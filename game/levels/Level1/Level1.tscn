@@ -23,6 +23,15 @@
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08841, 0 )
 
+[node name="Idle" parent="Player/PlayerStateMachine" index="0"]
+GRAVITY = 15
+
+[node name="Moving" parent="Player/PlayerStateMachine" index="1"]
+GRAVITY = 15
+
+[node name="Jump" parent="Player/PlayerStateMachine" index="2"]
+GRAVITY = 15
+
 [node name="Coins" type="Spatial" parent="."]
 
 [node name="Coin" parent="Coins" instance=ExtResource( 7 )]
@@ -63,8 +72,8 @@ collision_layer = 1
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3652, 29.6721, 0 )
 collision_layer = 1
 
-[node name="Area" parent="Platforms/EndPlatform" instance=ExtResource( 9 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21982, 31.0003, -0.0724596 )
+[node name="Portal" parent="Platforms/EndPlatform" instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.21982, 31.6028, 0.0977222 )
 
 [node name="Platform1" parent="Platforms" instance=ExtResource( 8 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86708, 20.7475, 0 )
@@ -157,6 +166,8 @@ shadow_color = Color( 0.152941, 0.14902, 0.14902, 1 )
 [node name="ViewPort" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 0.999618, 0.0276251, 0, -0.0276251, 0.999618, 0, 0, 0 )
 direction = Vector3( 0, 1, 0 )
+
+[editable path="Player"]
 
 [editable path="Enemies/Enemy"]
 

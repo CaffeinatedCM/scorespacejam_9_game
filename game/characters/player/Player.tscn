@@ -39,12 +39,16 @@ initial_state = NodePath("Idle")
 
 [node name="Idle" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 4 )
+GRAVITY = 15
 
 [node name="Moving" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 5 )
+GRAVITY = 15
 
 [node name="Jump" type="Node" parent="PlayerStateMachine"]
 script = ExtResource( 6 )
+GRAVITY = 15
+MAX_SPEED = 6
 
 [node name="PlayerInteractStateMachine" type="Node" parent="."]
 script = ExtResource( 2 )

@@ -10,8 +10,6 @@
 [ext_resource path="res://world/viewport/Viewport.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=9]
 
-
-
 [node name="Sandbox" type="Spatial"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]

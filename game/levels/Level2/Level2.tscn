@@ -1,8 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://world/ground/Ground.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/viewport/Viewport.tscn" type="PackedScene" id=2]
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://world/Platform4/Platform4.tscn" type="PackedScene" id=4]
+[ext_resource path="res://characters/Ogre/Ogre.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=7]
+[ext_resource path="res://world/Platform1/Platform1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objects/portal/Portal.tscn" type="PackedScene" id=9]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
 [node name="Level2" type="Spatial"]
 
@@ -10,11 +18,116 @@
 
 [node name="Ground" parent="Platforms" instance=ExtResource( 1 )]
 
+[node name="Platform" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1501, 3.59605, 0 )
+
+[node name="Platform4" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1501, 7.59605, 0 )
+
+[node name="Platform5" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.1501, 10.5961, 0 )
+
+[node name="Platform11" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.1501, 14.5961, 0 )
+
+[node name="Platform18" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.84894, 22.0291, 0 )
+
+[node name="Platform19" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9099, 26.9819, 0 )
+
+[node name="Platform20" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.82275, 30.8516, 0 )
+
+[node name="Platform21" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.830269, 30.8516, 0 )
+
+[node name="Platform12" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.150101, 18.5961, 0 )
+
+[node name="Platform3" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.78562, 3.59605, 0 )
+
+[node name="Platform2" parent="Platforms" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533443, 6.25591, 0 )
+
+[node name="Platform1" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 5, 0 )
+
+[node name="Platform6" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 7, 0 )
+
+[node name="Platform7" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 9, 0 )
+
+[node name="Platform8" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 12.1219, 0 )
+
+[node name="Platform9" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 14.3438, 0 )
+
+[node name="Platform10" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 15, 0 )
+
+[node name="Platform13" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 8.16511, 21.2148, 0.0215217 )
+
+[node name="Platform14" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 11.1623, 23.2148, 0.150653 )
+
+[node name="Platform15" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 11.1623, 26.3367, 0.150653 )
+
+[node name="Platform16" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 8.16511, 28.5586, 0.0215217 )
+
+[node name="Platform17" parent="Platforms" instance=ExtResource( 8 )]
+transform = Transform( -0.999073, 0, 0.0430437, 0, 1, 0, -0.0430437, 0, -0.999073, 5.16789, 29.2148, -0.107609 )
+
 [node name="Coins" type="Spatial" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 9, 0 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 10, 0 )
+VALUE = 3
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 17, 0 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53871, 25.2552, 0 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.53871, 31.8271, 0 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 11.1623, 24.2148, 0.150653 )
+VALUE = 3
 
 [node name="Enemies" type="Spatial" parent="."]
 
+[node name="Cybat" parent="Enemies" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 10, 0 )
+
+[node name="Cybat2" parent="Enemies" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 10, 0 )
+
+[node name="Ogre" parent="Enemies" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20.1578, 0 )
+
+[node name="Wandering" parent="Enemies/Ogre/StateMachine" index="2"]
+MAX_WANDER = 1
+
+[node name="AnimationTree" parent="Enemies/Ogre/enemychar" index="2"]
+parameters/playback = SubResource( 1 )
+
+[node name="Cybat3" parent="Enemies" instance=ExtResource( 7 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.16882, 24.2148, -0.150653 )
+
 [node name="ViewPort" parent="." instance=ExtResource( 2 )]
+direction = Vector3( 0, 1, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.996469, 0 )
@@ -24,3 +137,10 @@ transform = Transform( 1, 0, 0, 0, -0.747346, 0.664435, 0, -0.664435, -0.747346,
 light_color = Color( 0.960784, 0.972549, 0.54902, 1 )
 light_energy = 0.52
 shadow_enabled = true
+
+[node name="Portal" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.89541, 32.8081, 0.0291276 )
+
+[editable path="Enemies/Ogre"]
+
+[editable path="ViewPort"]

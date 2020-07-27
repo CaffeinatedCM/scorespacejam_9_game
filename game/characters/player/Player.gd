@@ -30,7 +30,7 @@ func take_damage(damage):
     oofPlayer.play()
 
 func collect_coin(value):
-    GameState.coins += 1
+    GameState.coins += value
     baDingPlayer.play()
     HUD.get_node("CoinValue").text = "%s" % [str(GameState.coins)]
 
