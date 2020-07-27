@@ -10,6 +10,9 @@ radius = 0.6
 height = 0.8
 
 [node name="Boss" type="KinematicBody"]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Stats" parent="." instance=ExtResource( 4 )]
 
