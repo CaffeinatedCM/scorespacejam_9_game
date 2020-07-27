@@ -4,7 +4,7 @@ export var MAX_SPEED = 15
 export var ACCELERATION = 10
 export var DECELERATION = 16
 
-var coin = preload("res://objects/coin/Coin.tscn")
+var coin = preload("res://objects/Coin/Coin.tscn")
 
 
 var boss_position
