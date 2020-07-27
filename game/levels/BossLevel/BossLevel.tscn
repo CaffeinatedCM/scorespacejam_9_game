@@ -22,11 +22,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.20514, 0 )
 [node name="Platform2" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 5.20514, 0 )
 
-[node name="Platform4" parent="." instance=ExtResource( 4 )]
+[node name="LeftPlatform" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 3.20514, 0 )
 
-[node name="Platform5" parent="." instance=ExtResource( 4 )]
+[node name="Position3D" type="Position3D" parent="LeftPlatform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0 )
+
+[node name="RightPlatform" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 3.20514, 0 )
+
+[node name="Position3D" type="Position3D" parent="RightPlatform"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0 )
 
 [node name="Platform3" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 5.20514, 0 )
