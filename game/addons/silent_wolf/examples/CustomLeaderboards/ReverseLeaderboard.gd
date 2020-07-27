@@ -11,7 +11,6 @@ func _ready():
     var scores = []
     if ld_name in SilentWolf.Scores.leaderboards:
         scores = SilentWolf.Scores.leaderboards[ld_name]
-    print(scores)
     if len(scores) > 0: 
         render_board(scores)
     else:

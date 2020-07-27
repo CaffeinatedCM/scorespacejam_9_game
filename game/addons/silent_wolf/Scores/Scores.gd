@@ -119,23 +119,17 @@ func get_high_scores(maximum=10, ldboard_name="main", period_offset=0):
     wrHighScores = weakref(HighScores)
     if OS.get_name() != "HTML5":
         HighScores.set_use_threads(true)
-    print(get_tree().get_root().get_children())
-
     add_child(HighScores)
-    print(get_tree().get_root().get_children())
     HighScores.connect("request_completed", self, "_on_GetHighScores_request_completed")
     SWLogger.info("Calling SilentWolf backend to get scores...")
     # resetting the latest_number value in case the first requests times out, we need to request the same amount of top scores in the retry
     latest_max = maximum
-    print(1)
     var api_key_header = "x-api-key: " + SilentWolf.config.api_key
     var headers = [api_key_header]
     var game_id = SilentWolf.config.game_id
     var game_version = SilentWolf.config.game_version
     var request_url = "https://api.silentwolf.com/get_top_scores/" + str(game_id) + "?version=" + str(game_version) + "&max=" + str(maximum)  + "&ldboard_name=" + str(ldboard_name) + "&period_offset=" + str(period_offset)
-    print(2)
     HighScores.request(request_url, headers)
-    print(3)
     # setup request timer to track potential timeouts (and retry in case of timeout)
     #request_timer.start()
     # needed to call yield function - needs to return an object
@@ -203,7 +197,6 @@ func wipe_leaderboard(ldboard_name='main'):
     return self
         
 func _on_GetHighScores_request_completed(result, response_code, headers, body):
-    print('lalalala')
     SWLogger.info("GetHighScores request completed")
     var status_check = CommonErrors.check_status_code(response_code)
     #print("client status: " + str(HighScores.get_http_client_status()))
@@ -216,7 +209,6 @@ func _on_GetHighScores_request_completed(result, response_code, headers, body):
     if status_check:
         var json = JSON.parse(body.get_string_from_utf8())
         var response = json.result
-        print(response)
         if "message" in response.keys() and response.message == "Forbidden":
             SWLogger.error("You are not authorized to call the SilentWolf API - check your API key configuration: https://silentwolf.com/leaderboard")
         else:
