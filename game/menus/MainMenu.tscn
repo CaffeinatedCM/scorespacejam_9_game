@@ -35,23 +35,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CanvasLayer/MainMenuControl"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -118.165
-margin_top = 380.109
-margin_right = 58.835
-margin_bottom = 394.109
-text = "NAME OF GAME GOES HERE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="MenuButtons" parent="CanvasLayer/MainMenuControl" instance=ExtResource( 9 )]
-margin_left = 208.714
-margin_top = -256.941
-margin_right = 477.714
-margin_bottom = 65.0587
+margin_left = -137.371
+margin_top = -140.793
+margin_right = 131.629
+margin_bottom = 181.207
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 21.285 )
