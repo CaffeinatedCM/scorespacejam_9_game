@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://objects/portal/LevelExitPortal_v1.png" type="Texture" id=1]
+[ext_resource path="res://objects/portal/Portal.gd" type="Script" id=2]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 1.47904, 1.85475, 0.921205 )
@@ -8,12 +9,30 @@ extents = Vector3( 1.47904, 1.85475, 0.921205 )
 [sub_resource type="CubeMesh" id=2]
 size = Vector3( 3, 4, 0 )
 
+[sub_resource type="ParticlesMaterial" id=4]
+emission_shape = 1
+emission_sphere_radius = 6.63
+direction = Vector3( 0, 0, 1 )
+color = Color( 0.643137, 0.992157, 1, 1 )
+
 [sub_resource type="SpatialMaterial" id=3]
+next_pass = SubResource( 4 )
 flags_transparent = true
 albedo_texture = ExtResource( 1 )
 uv1_scale = Vector3( 3, 2, 1 )
 
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.164706, 0.941176, 1, 1 )
+
+[sub_resource type="SphereMesh" id=6]
+material = SubResource( 5 )
+radius = 0.01
+height = 0.02
+
 [node name="Portal" type="Area"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1.17131, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
@@ -23,3 +42,16 @@ shape = SubResource( 1 )
 transform = Transform( 1.2852, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.872922 )
 mesh = SubResource( 2 )
 material = SubResource( 3 )
+
+[node name="CPUParticles" type="CPUParticles" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31823, -0.791432 )
+amount = 100
+lifetime = 0.5
+speed_scale = 0.5
+mesh = SubResource( 6 )
+direction = Vector3( 0, 0, 1 )
+spread = 95.32
+flatness = 0.35
+initial_velocity = 5.0
+damping = 16.13
+[connection signal="body_entered" from="." to="." method="_on_Portal_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://characters/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://world/ground/Ground.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=7]
 [ext_resource path="res://world/viewport/Viewport.tscn" type="PackedScene" id=8]
 [ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objects/portal/Portal.tscn" type="PackedScene" id=10]
 
 [node name="Sandbox" type="Spatial"]
 
@@ -76,6 +77,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.3, 1.9, 0 )
 
 [node name="Fairy2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7, 18.8, 0 )
+
+[node name="Portal" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 2, 0 )
 
 [editable path="Player"]
 
