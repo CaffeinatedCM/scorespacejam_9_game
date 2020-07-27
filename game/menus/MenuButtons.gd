@@ -8,3 +8,6 @@ func _on_Level1Button_pressed():
 
 func _on_Level2Button_pressed():
     get_tree().change_scene("res://levels/Level2/Level2.tscn")
+
+func _on_Level3Button_pressed():
+    get_tree().change_scene("res://levels/Level3/Level3.tscn")

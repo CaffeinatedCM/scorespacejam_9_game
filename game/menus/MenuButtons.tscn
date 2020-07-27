@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://menus/MenuButtons.gd" type="Script" id=1]
+[ext_resource path="res://menus/Banner_v2.png" type="Texture" id=2]
 
 [node name="MenuButtons" type="Panel"]
 anchor_left = 0.5
@@ -48,21 +49,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Level3Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -103.06
+margin_top = -4.97824
+margin_right = 104.94
+margin_bottom = 15.0218
+focus_neighbour_bottom = NodePath("../SandboxButton")
+focus_next = NodePath("../SandboxButton")
+text = "Level 3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SandboxButton" type="Button" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -104.0
-margin_top = -10.0
-margin_right = 104.0
-margin_bottom = 10.0
+margin_left = -100.822
+margin_top = 116.076
+margin_right = 107.178
+margin_bottom = 136.076
 focus_neighbour_top = NodePath("../Level1Button")
 focus_previous = NodePath("../Level1Button")
 text = "Sandbox"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -54.7858
+margin_top = -196.591
+margin_right = 1245.21
+margin_bottom = 303.409
+rect_scale = Vector2( 0.293546, 0.36 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Level1Button" to="." method="_on_Level1Button_pressed"]
 [connection signal="pressed" from="Level2Button" to="." method="_on_Level2Button_pressed"]
+[connection signal="pressed" from="Level3Button" to="." method="_on_Level3Button_pressed"]
 [connection signal="pressed" from="SandboxButton" to="." method="_on_SandboxButton_pressed"]
