@@ -5,7 +5,7 @@ func enter():
 
 func update(_delta):
     get_player_direction()
-    if Input.is_action_just_pressed("jump"):
+    if Input.is_action_just_pressed("jump") and player.is_on_floor():
         emit_signal("finished", "jump")
         return
     if direction.x != 0:

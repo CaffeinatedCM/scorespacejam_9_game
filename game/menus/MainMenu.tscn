@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://world/moving_platform/MovingPlatform.tscn" type="PackedScene" id=1]
 [ext_resource path="res://objects/Coin/Coin.tscn" type="PackedScene" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://menus/MainMenu.gd" type="Script" id=7]
 [ext_resource path="res://characters/Cybat/Cybat.tscn" type="PackedScene" id=8]
 [ext_resource path="res://menus/MenuButtons.tscn" type="PackedScene" id=9]
-[ext_resource path="res://menus/MenuButtons.gd" type="Script" id=10]
 
 [node name="MainMenu" type="Spatial"]
 script = ExtResource( 7 )
@@ -36,7 +35,6 @@ __meta__ = {
 }
 
 [node name="MenuButtons" parent="CanvasLayer/MainMenuControl" instance=ExtResource( 9 )]
-script = ExtResource( 10 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 21.285 )

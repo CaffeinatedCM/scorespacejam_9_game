@@ -9,6 +9,7 @@ var target
 var shooting = false
 
 func enter():
+    animationState.travel("Cast")
     shooting = false
     var overlaps = playerDetection.get_overlapping_bodies()
     if overlaps.size() > 0:
@@ -23,6 +24,8 @@ func exit():
 func update(_delta):
     if not shooting:
         shooting = true
+        var direction = enemy.global_transform.origin.direction_to(target.global_transform.origin)
+        mesh.rotation_degrees.y = -90 if direction.x < 0 else 90
         $ShazamPlayer.play()
         for i in range(shots):
             shoot(enemy.global_transform.origin.direction_to(target.global_transform.origin))

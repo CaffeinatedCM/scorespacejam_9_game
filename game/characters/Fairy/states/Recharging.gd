@@ -3,7 +3,7 @@ extends FairyBaseState
 export var RECHARGE_TIME = 3
 
 func enter():
-    # TODO: recharge animation
+    animationState.travel("Idle")
     reset_timer()
     connect_to_playerdetection("body_exited", "_on_player_left")
 

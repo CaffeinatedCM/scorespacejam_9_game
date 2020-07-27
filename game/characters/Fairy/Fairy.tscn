@@ -10,11 +10,11 @@
 [ext_resource path="res://characters/Fairy/states/Wandering.gd" type="Script" id=8]
 [ext_resource path="res://characters/Fairy/FairyMesh.tscn" type="PackedScene" id=9]
 
-[sub_resource type="CapsuleShape" id=2]
+[sub_resource type="CapsuleShape" id=1]
 radius = 0.1
 height = 0.17697
 
-[sub_resource type="CylinderShape" id=3]
+[sub_resource type="CylinderShape" id=2]
 radius = 10.0431
 
 [node name="Fairy" type="KinematicBody"]
@@ -52,7 +52,7 @@ one_shot = true
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="PlayerDetection" type="Area" parent="."]
 monitorable = false
@@ -61,7 +61,7 @@ collision_mask = 2
 
 [node name="CollisionShape" type="CollisionShape" parent="PlayerDetection"]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
 aabb = AABB( -10.5127, -10.3058, -1, 21.0255, 20.6115, 2 )

@@ -12,7 +12,7 @@ var target
 var velocity = Vector3.ZERO
 
 func enter():
-    # TODO Wandering animation
+    animationState.travel("Idle")
     connect_to_playerdetection()
     velocity = Vector3.ZERO
     target = Vector3.ZERO

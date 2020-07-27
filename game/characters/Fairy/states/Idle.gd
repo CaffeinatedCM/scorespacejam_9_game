@@ -5,7 +5,7 @@ export var wander_chance = 0.9
 onready var timer = get_node("IdleTimer")
 
 func enter():
-    #TODO: idle animation transition
+    animationState.travel("Idle")
     connect_to_playerdetection()
     reset_timer()
 

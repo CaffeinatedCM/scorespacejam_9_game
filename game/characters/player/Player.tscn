@@ -69,6 +69,9 @@ shape = SubResource( 1 )
 
 [node name="GunPivot" parent="." instance=ExtResource( 9 )]
 
+[node name="Gun" parent="GunPivot" index="0"]
+transform = Transform( -0.00928512, 0, 0.999957, 0, 1, 0, -0.999957, 0, -0.00928512, 1.2395, 0, 0 )
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" type="Control" parent="CanvasLayer"]
@@ -151,3 +154,5 @@ bus = "Fun Bus"
 
 [node name="UghPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 17 )
+
+[editable path="GunPivot"]
