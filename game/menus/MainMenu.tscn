@@ -22,18 +22,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="CanvasLayer/MainMenuControl"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -88.5
-margin_top = 200.0
-margin_right = 88.5
-margin_bottom = 214.0
-text = "NAME OF GAME GOES HERE"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="MenuButtons" parent="CanvasLayer/MainMenuControl" instance=ExtResource( 9 )]
 
 [node name="Camera" type="Camera" parent="."]
