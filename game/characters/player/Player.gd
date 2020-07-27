@@ -40,6 +40,7 @@ func die():
     yield(bigOofPlayer, "finished")
     Input.stop_joy_vibration(0)
     GameState.totalScore = GameState.totalKills * GameState.coins
+    GameState.wipe_scores()
     get_tree().change_scene("res://menus/SubmitScore.tscn")
 
 func update_health_display(value):
