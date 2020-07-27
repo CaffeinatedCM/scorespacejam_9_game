@@ -10,7 +10,11 @@ var shooting = false
 
 func enter():
     shooting = false
-    target = playerDetection.get_overlapping_bodies()[0]
+    var overlaps = playerDetection.get_overlapping_bodies()
+    if overlaps.size() > 0:
+        target = playerDetection.get_overlapping_bodies()[0]
+    else:
+        emit_signal("finished", "previous")
     connect_to_playerdetection("body_exited", "_on_player_left")
 
 func exit():

@@ -730,7 +730,7 @@ shape = SubResource( 15 )
 [node name="GunPivot" parent="." instance=ExtResource( 8 )]
 
 [node name="Gun" parent="GunPivot" index="0"]
-transform = Transform( -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0, 0, 1, 2.62571, 0, 0 )
+transform = Transform( 7.1215e-15, 4.37114e-08, 1, 0.866026, 0.5, -2.18557e-08, -0.5, 0.866026, -3.78552e-08, 2.62571, 0, 0 )
 
 [node name="VisibilityEnabler" type="VisibilityEnabler" parent="."]
 aabb = AABB( -5.78806, -3.07569, -1, 11.5761, 6.15138, 2 )
