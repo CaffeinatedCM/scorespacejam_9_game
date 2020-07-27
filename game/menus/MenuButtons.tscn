@@ -45,11 +45,13 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 31.748
-margin_top = 138.104
-margin_right = 242.748
-margin_bottom = 271.104
+margin_left = 20.6863
+margin_top = 133.757
+margin_right = 244.686
+margin_bottom = 306.757
 text = "Controller is preferred for playing
+A - Jump | Right Trigger - Shoot
+Left stick - Move | Right Stick - aim
 
 Keyboard:
 'A' AND 'D' to move
