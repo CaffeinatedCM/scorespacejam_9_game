@@ -2,7 +2,7 @@ extends State
 class_name FairyBaseState
 
 onready var enemy = get_parent().get_parent()
-onready var mesh = enemy.get_node("CSGMesh") # TODO: use real mesh
+onready var mesh = enemy.get_node("mesh") # TODO: use real mesh
 onready var playerDetection = enemy.get_node("PlayerDetection")
 onready var stats = enemy.get_node("Stats")
 
