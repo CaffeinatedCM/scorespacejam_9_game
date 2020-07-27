@@ -1,8 +1,10 @@
 extends BossBaseState
 
-export var MAX_SPEED = 20
+export var MAX_SPEED = 15
 export var ACCELERATION = 10
 export var DECELERATION = 16
+
+var coin = preload("res://objects/coin/Coin.tscn")
 
 
 var boss_position
@@ -54,3 +56,9 @@ func update(delta):
 
         velocity = boss.move_and_slide(velocity, Vector3.UP)
         emit_signal("finished", "attack")
+
+    if $CoinPlaceTimer.time_left <= 0:
+        var c = coin.instance()
+        c.global_transform = boss.global_transform
+        get_tree().root.get_node("BossLevel").add_child(c)
+        $CoinPlaceTimer.start(0.2)
