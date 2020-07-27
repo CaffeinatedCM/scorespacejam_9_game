@@ -19,7 +19,6 @@ func update(_delta):
     if Input.is_action_just_pressed("shoot"):
         shoot()
 
-
 func shoot():
     var b = bullet.instance()
     b.initialize(stats.DAMAGE, Vector3(aim_direction.x, aim_direction.y, 0).normalized())

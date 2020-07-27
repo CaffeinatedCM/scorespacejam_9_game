@@ -18,9 +18,9 @@
 [ext_resource path="res://assets/ba-ding.ogg" type="AudioStream" id=16]
 [ext_resource path="res://assets/ugh.ogg" type="AudioStream" id=17]
 
-[sub_resource type="AnimationNodeStateMachinePlayback" id=2]
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="CapsuleShape" id=2]
 radius = 0.442881
 height = 0.954786
 
@@ -66,11 +66,11 @@ bus = "Fun Bus"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.785012, 0 )
 
 [node name="AnimationTree" parent="playerchar" index="2"]
-parameters/playback = SubResource( 2 )
+parameters/playback = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.102972, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 
 [node name="GunPivot" parent="." instance=ExtResource( 9 )]
 
@@ -82,6 +82,7 @@ transform = Transform( -0.00928512, 0, 0.999957, 0, 1, 0, -0.999957, 0, -0.00928
 [node name="HUD" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
