@@ -50,6 +50,10 @@ shape = SubResource( 2 )
 [node name="ChangePlatform" type="Node" parent="StateMachine"]
 script = ExtResource( 6 )
 
+[node name="CoinPlaceTimer" type="Timer" parent="StateMachine/ChangePlatform"]
+wait_time = 0.2
+one_shot = true
+
 [node name="Attack" type="Node" parent="StateMachine"]
 script = ExtResource( 7 )
 
