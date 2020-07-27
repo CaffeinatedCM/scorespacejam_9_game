@@ -21,11 +21,11 @@ func _ready():
 
 func increase_total_kills():
     totalKills += 1
-	emit_signal("total_kills_updated")
-	
+    emit_signal("total_kills_updated")
+    
 func wipe_scores():
-	totalKills = 0
-	coins = 0
+    totalKills = 0
+    coins = 0
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

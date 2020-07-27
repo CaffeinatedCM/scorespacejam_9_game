@@ -14,18 +14,10 @@ func take_damage(value):
     $Stats.health -= value
 
 func die():
-    # if not secondStage:
-    #     $bossmesh/AnimationPlayer.play("TransitionToPhaseTwo")
-    #     secondStage = true
-    #     $Stats.health = 30
-    #     $Stats.MAX_HEALTH = 30
-    #     $CollisionShape.scale = Vector3(3, 3, 3)
-    #     $CollisionShape.translation += Vector3(0, 3, 0)
-    #     $Hurtbox.scale = Vector3(3, 3, 3)
-    #     $Hurtbox.translation += Vector3(0, 3, 0)
-    #     return
-    # TODO: Spawn portal
-    queue_free()
+    GameState.increase_total_kills()
+    GameState.totalScore = GameState.totalKills * GameState.coins
+    GameState.wipe_scores()
+    get_tree().change_scene("res://menus/SubmitScore.tscn")
 
 func _on_Hurtbox_body_entered(player):
     player.take_damage(3)
