@@ -31,6 +31,8 @@ script = ExtResource( 7 )
 [node name="MainMenuControl" type="Control" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = 2.0
+margin_bottom = 2.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -40,20 +42,6 @@ margin_left = -137.371
 margin_top = -140.793
 margin_right = 131.629
 margin_bottom = 181.207
-
-[node name="Label" type="Label" parent="CanvasLayer/MainMenuControl/MenuButtons"]
-margin_left = 30.0
-margin_top = 141.0
-margin_right = 241.0
-margin_bottom = 274.0
-text = "Controller is preferred for playing
-
-Keyboard:
-'A' AND 'D' to move
- 'SPACE' to jump
-'CTRL' to fire
-
-Arrow Keys to Aim"
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, 21.285 )

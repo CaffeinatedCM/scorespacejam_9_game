@@ -43,4 +43,18 @@ texture = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Label" type="Label" parent="."]
+margin_left = 31.748
+margin_top = 138.104
+margin_right = 242.748
+margin_bottom = 271.104
+text = "Controller is preferred for playing
+
+Keyboard:
+'A' AND 'D' to move
+ 'SPACE' to jump
+'CTRL' to fire
+
+Arrow Keys to Aim"
 [connection signal="pressed" from="Level1Button" to="." method="_on_Level1Button_pressed"]
