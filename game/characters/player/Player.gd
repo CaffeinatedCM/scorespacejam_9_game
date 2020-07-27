@@ -39,6 +39,8 @@ func die():
     Input.start_joy_vibration(0, 1,1, 0)
     yield(bigOofPlayer, "finished")
     Input.stop_joy_vibration(0)
+    SilentWolf.Scores.persist_score('test_player', GameState.totalKills)
+
     get_tree().change_scene("res://menus/GameOver.tscn")
 
 func update_health_display(value):

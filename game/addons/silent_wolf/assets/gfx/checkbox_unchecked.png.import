@@ -2,11 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-valid=false
+path="res://.import/checkbox_unchecked.png-747244fa66895a7a282a8f1df36959ae.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://icon.png"
+source_file="res://addons/silent_wolf/assets/gfx/checkbox_unchecked.png"
+dest_files=[ "res://.import/checkbox_unchecked.png-747244fa66895a7a282a8f1df36959ae.stex" ]
+
 [params]
 
 compress/mode=0
