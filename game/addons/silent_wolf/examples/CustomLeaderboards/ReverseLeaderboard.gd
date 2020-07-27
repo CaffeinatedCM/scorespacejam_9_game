@@ -24,7 +24,7 @@ func render_board(scores):
     if !scores:
         add_no_scores_message()
     else:
-        for i in range(10):
+        for i in range(scores.size()):
             var score = scores[i]
             add_item(score.player_name, str(int(score.score)))
     

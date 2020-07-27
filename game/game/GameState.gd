@@ -3,6 +3,8 @@ extends Node
 var coins = 0
 var highestScore = 0
 var totalKills = 0
+var totalScore = 0
+var playerName = ''
 signal total_kills_updated()
 
 func _ready():

@@ -1,0 +1,108 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://addons/silent_wolf/assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://addons/silent_wolf/common/SWButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://addons/silent_wolf/Auth/SubmitScore.gd" type="Script" id=4]
+[ext_resource path="res://addons/silent_wolf/assets/fonts/game_font.tres" type="DynamicFont" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 2 )
+
+[node name="ConfirmEmail" type="TextureRect"]
+margin_left = 1.88776
+margin_right = 1713.89
+margin_bottom = 849.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FormContainer" type="VBoxContainer" parent="."]
+margin_left = 146.399
+margin_top = 78.0793
+margin_right = 1088.4
+margin_bottom = 679.079
+rect_min_size = Vector2( 10, 20 )
+custom_constants/separation = 100
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CodeContainer" type="HBoxContainer" parent="FormContainer"]
+margin_right = 942.0
+margin_bottom = 75.0
+custom_constants/separation = 20
+
+[node name="Label" type="Label" parent="FormContainer/CodeContainer"]
+margin_top = 1.0
+margin_right = 208.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 5 )
+text = "Name:"
+
+[node name="PlayerName" type="LineEdit" parent="FormContainer/CodeContainer"]
+margin_left = 228.0
+margin_right = 558.0
+margin_bottom = 75.0
+rect_min_size = Vector2( 330, 75 )
+custom_fonts/font = SubResource( 1 )
+max_length = 30
+
+[node name="Label2" type="Label" parent="FormContainer/CodeContainer"]
+margin_left = 578.0
+margin_top = 1.0
+margin_right = 786.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 5 )
+text = "Score:"
+
+[node name="Score" type="Label" parent="FormContainer/CodeContainer"]
+margin_left = 806.0
+margin_top = 1.0
+margin_right = 942.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMessage" type="Label" parent="FormContainer"]
+visible = false
+margin_top = 277.0
+margin_right = 935.0
+margin_bottom = 279.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.866667, 0.101961, 0.101961, 1 )
+autowrap = true
+
+[node name="ConfirmButton" parent="FormContainer" instance=ExtResource( 3 )]
+margin_top = 175.0
+margin_right = 942.0
+margin_bottom = 293.0
+custom_fonts/font = ExtResource( 5 )
+text = "Submit High Score"
+
+[node name="Cancel" parent="FormContainer" instance=ExtResource( 3 )]
+margin_top = 393.0
+margin_right = 942.0
+margin_bottom = 511.0
+custom_fonts/font = ExtResource( 5 )
+text = "My Score Sucks"
+
+[node name="ProcessingLabel" type="Label" parent="FormContainer"]
+visible = false
+margin_top = 393.0
+margin_right = 935.0
+margin_bottom = 465.0
+custom_fonts/font = ExtResource( 5 )
+text = "Processing..."
+align = 1
+[connection signal="pressed" from="FormContainer/ConfirmButton" to="." method="_on_ConfirmButton_pressed"]
+[connection signal="pressed" from="FormContainer/Cancel" to="." method="_on_Cancel_pressed"]
